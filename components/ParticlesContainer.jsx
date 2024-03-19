@@ -1,18 +1,19 @@
-import { useCallback } from "react";
 import { Particles } from "react-tsparticles";
 import { loadFull } from "tsparticles";
+import { useCallback } from "react";
 
 const ParticlesContainer = () => {
-  const ParticlesInit = useCallback(async (engine) => {
+  const particlesInit = useCallback(async (engine) => {
     await loadFull(engine);
   }, []);
-  const ParticlesLoaded = useCallback(async () => {}, []);
+
+  const particlesLoaded = useCallback(async () => {}, []);
   return (
     <Particles
-      className="w-full h-full absolute translate-z-0"
+      className="h-full w-full absolute translate-z-0"
       id="tsparticles"
-      init={ParticlesInit}
-      loaded={ParticlesLoaded}
+      init={particlesInit}
+      loaded={particlesLoaded}
       options={{
         fullScreen: { enable: false },
         background: {
@@ -35,7 +36,7 @@ const ParticlesContainer = () => {
           },
           modes: {
             push: {
-              quantity: 93,
+              quantity: 90,
             },
             repulse: {
               distance: 200,
@@ -84,7 +85,7 @@ const ParticlesContainer = () => {
             value: { min: 1, max: 5 },
           },
         },
-        detectRetina: true,
+        detectRetina: true
       }}
     />
   );
